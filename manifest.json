@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Warn Top Tweets First",
+    "description": "",
+    "version": "1.0",
+    "icons": {
+    },
+    "content_scripts": [{
+        "matches": ["https://twitter.com/*" ],
+        "js": ["content_scripts.js"]
+    }],
+    "background": {
+    },
+    "browser_action": {
+    },
+    "permissions": [
+        "https://twitter.com/*"
+    ]
+}
