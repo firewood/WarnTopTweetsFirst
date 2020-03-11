@@ -3,7 +3,7 @@ setTimeout(function() {
   for (let i = 0; i < h2.length; ++i) {
     var span = h2[i].getElementsByTagName('span')[0];
     if (!span) continue;
-    if (['ホーム', 'Home'].includes(span.textContent)) {
+    if (['Home', 'ホーム'].includes(span.textContent)) {
       span.style.fontSize = '30pt';
       span.style.color = 'red';
     }

@@ -1,9 +1,10 @@
 {
     "manifest_version": 2,
     "name": "Warn Top Tweets First",
-    "description": "",
+    "description": "Emphasis Top Tweets First",
     "version": "1.0",
     "icons": {
+        "48": "clock.png"
     },
     "content_scripts": [{
         "matches": ["https://twitter.com/*" ],
@@ -14,6 +15,5 @@
     "browser_action": {
     },
     "permissions": [
-        "https://twitter.com/*"
     ]
 }
