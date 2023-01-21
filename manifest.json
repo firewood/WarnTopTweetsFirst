@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Warn Top Tweets First",
     "description": "Emphasis Top Tweets First",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "icons": {
         "48": "clock.png"
     },
