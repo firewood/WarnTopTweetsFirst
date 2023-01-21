@@ -11,27 +11,23 @@ function warnTopTweetsFirst() {
 }
 
 function hideMoreTweets() {
-//  if (!document.referrer) {
-//    return;
-//  }
-  let article = document.querySelector( 'div[data-testid="primaryColumn"] article[role="article"]' );
-  if (!article) {
-    return;
-  }
-  let articles = article.parentElement.parentElement.parentElement.parentElement;
-  if (!articles || !articles.children) {
-    return;
-  }
+    document.querySelectorAll('h2[role="heading"]').forEach((element, index) => {
+      if (element.textContent == 'その他のツイート' || element.textContent == '関連ツイート') {
+        element.textContent = ' ';
+        element.style.height = '2000px';
+      }
+    });
+}
 
-  for (let i = 0; i < articles.children.length; ++i) {
-    let cell = articles.children[i];
-    let heading = cell.querySelector( 'h2[role="heading"]' );
-    if (heading && heading.textContent == 'その他のツイート') {
-      cell.style.height = '2000px';
-      break;
-    }
+var count = 0;
+var check_timer = setInterval(check, 500);
+
+function check() {
+  warnTopTweetsFirst();
+  hideMoreTweets();
+
+  if (++count >= 50) {
+    clearInterval(check_timer);
   }
 }
 
-setTimeout(function() { warnTopTweetsFirst(); }, 500);
-setTimeout(function() { hideMoreTweets(); }, 3000);
